@@ -29,8 +29,9 @@ function! AddressBar()
   augroup END
   " Close the buffer and edit the file at the path under cursor when pressing Enter
   nnoremap <silent> <buffer> <cr> :call CloseAndGoToFile()<cr>
-  " Close the buffer when pressing esc
+  " Close the buffer when pressing Esc or Ctrl-C
   nnoremap <buffer> <esc> :bdelete!<cr>
+  nnoremap <buffer> <c-c> :bdelete!<cr>
   " Type the path into the scratch buffer
   call feedkeys('i'.s:path."\<esc>")
 endfunction
